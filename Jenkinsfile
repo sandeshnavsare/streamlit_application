@@ -14,7 +14,7 @@ pipeline {
         stage("Validate Parameters") {
             steps {
                 script {
-                    if  (params.Application_DOCKER_TAG == '') {
+                    if  (params.Application_DOCKER_TAG == 'latest') {
                         error("Application_DOCKER_TAG must be provided.")
                     }
                 }
