@@ -7,14 +7,14 @@ pipeline {
     }
     
     parameters {
-        string(name: 'Application_DOCKER_TAG', defaultValue: '', description: 'Setting docker image for latest push')
+        string(name: 'Application_DOCKER_TAG', defaultValue: 'latest', description: 'Setting docker image for latest push')
     }
     
     stages {
         stage("Validate Parameters") {
             steps {
                 script {
-                    if  (params.Application_DOCKER_TAG == 'latest') {
+                    if  (params.Application_DOCKER_TAG == '') {
                         error("Application_DOCKER_TAG must be provided.")
                     }
                 }
