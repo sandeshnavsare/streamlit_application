@@ -71,9 +71,7 @@ pipeline {
         stage("Docker: Build Images"){
             steps{
                 script{
-                        {
-                            docker_build("streamfit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
-                        }
+                    docker_build("streamfit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
                 }
             }
         }
