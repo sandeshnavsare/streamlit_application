@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: streamlit-app-deployment
-  namespace: Sandesh-ns
+  namespace: 
   labels:
     app: streamlit-app
 spec:
