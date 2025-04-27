@@ -41,7 +41,7 @@ pipeline {
         stage("Docker: Build Images"){
             steps{
                 script{
-                    docker_build("streamfit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
+                    docker_build("streamlit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
                 }
             }
         }
@@ -49,7 +49,7 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("streamfit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
+                    docker_push("streamlit-application","${params.Application_DOCKER_TAG}","sandeshnavsare")
                 }
             }
         }
