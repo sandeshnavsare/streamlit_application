@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: streamlit-app
-          image: sandeshnavsare/streamlit-application:
+          image: sandeshnavsare/streamlit-application:latest
           ports:
             - containerPort: 8080
 ---
