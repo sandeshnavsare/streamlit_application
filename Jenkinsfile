@@ -56,10 +56,7 @@ pipeline {
     }
     post{
         success{
-            archiveArtifacts artifacts: 'coverage.xml', followSymlinks: false
-            // Show test results
-           
-            build job: "Streamlit-app-CD", parameters: [
+                build job: "Streamlit-app-CD", parameters: [
                 string(name: 'Application_DOCKER_TAG', value: "${params.Application_DOCKER_TAG}")
             ]
         }
