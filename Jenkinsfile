@@ -58,7 +58,7 @@ pipeline {
         success{
             archiveArtifacts artifacts: 'coverage.xml', followSymlinks: false
             // Show test results
-            junit 'reports/*.xml
+           
             build job: "Streamlit-app-CD", parameters: [
                 string(name: 'Application_DOCKER_TAG', value: "${params.Application_DOCKER_TAG}")
             ]
