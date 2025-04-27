@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamfit-app-deployment
+  namespace: Sandesh-ns
+  labels:
+    app: streamfit-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: streamfit-app
+  template:
+    metadata:
+      name: streamfit-app
+      labels:
+        app: streamfit-app
+    spec:
+      containers:
+        - name: streamfit-app
+          image: sandeshnavsare/streamfit-application:1.0
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: streamfit-app-service
+  namespace: Sandesh-ns
+spec:
+  type: NodePort
+  selector:
+    app: streamfit-app
+  ports:
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      nodePort: 31100
