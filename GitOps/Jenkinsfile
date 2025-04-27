@@ -3,7 +3,7 @@ pipeline {
     agent any
     
     parameters {
-        string(name: 'Application_DOCKER_TAG', defaultValue: '', description: 'Applications Docker tag of the image built by the CI job')
+        string(name: 'Application_DOCKER_TAG', defaultValue: '', description: 'Streamfit Applications Docker tag of the image built by the CI job')
     }
 
     stages {
@@ -18,7 +18,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/LondheShubham153/Wanderlust-Mega-Project.","master")
+                    code_checkout("https://github.com/sandeshnavsare/streamlit_application.git","master")
                 }
             }
         }
@@ -59,7 +59,7 @@ pipeline {
                         git commit -m "Updated environment variables"
                         
                         echo "Pushing changes to github: "
-                        git push  master
+                        git push https://github.com/sandeshnavsare/streamlit_application.git master
                     '''
                     }
                 }
