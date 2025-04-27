@@ -35,9 +35,9 @@ pipeline {
         stage("Update: Kubernetes manifests"){
             steps{
                 script{
-                    dir('kubernetes'){
+                    dir('kubernates'){
                         sh """
-                            sed -i -e s/wanderlust-backend-beta.*/wanderlust-backend-beta:${params.Application_DOCKER_TAG}/g deployement.yaml
+                            sed -i -e s/streamfit-application.*/streamfit-application:${params.Application_DOCKER_TAG}/g deployment.yml
                         """
                     }
                 }
