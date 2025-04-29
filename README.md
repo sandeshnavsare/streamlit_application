@@ -120,30 +120,30 @@ sudo apt-get install jenkins -y
   
   - <b>Create EKS Cluster (Master machine)</b>
   ```bash
-  eksctl create cluster --name=wanderlust \
-                      --region=us-east-2 \
+  eksctl create cluster --name=sandesh-eks \
+                      --region=us-east-1 \
                       --version=1.30 \
                       --without-nodegroup
   ```
   - <b>Associate IAM OIDC Provider (Master machine)</b>
   ```bash
   eksctl utils associate-iam-oidc-provider \
-    --region us-east-2 \
-    --cluster wanderlust \
+    --region us-east-1 \
+    --cluster sandesh-eks \
     --approve
   ```
   - <b>Create Nodegroup (Master machine)</b>
   ```bash
-  eksctl create nodegroup --cluster=wanderlust \
-                       --region=us-east-2 \
+  eksctl create nodegroup --cluster=sandesh-eks \
+                       --region=us-east-1 \
                        --name=wanderlust \
-                       --node-type=t2.large \
-                       --nodes=2 \
-                       --nodes-min=2 \
+                       --node-type=t2.medium \
+                       --nodes=1 \
+                       --nodes-min=1 \
                        --nodes-max=2 \
                        --node-volume-size=29 \
                        --ssh-access \
-                       --ssh-public-key=eks-nodegroup-key 
+                       --ssh-public-key=my_vm_key
   ```
 > [!Note]
 >  Make sure the ssh-public-key "eks-nodegroup-key is available in your aws account"
