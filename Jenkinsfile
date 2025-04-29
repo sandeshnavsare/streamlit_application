@@ -2,9 +2,9 @@
 pipeline {
     agent any
     
-    environment{
-        SONAR_HOME = tool "Sonar"
-    }
+    // environment{
+    //     SONAR_HOME = tool "Sonar"
+    // }
     
     parameters {
         string(name: 'Application_DOCKER_TAG', defaultValue: 'latest', description: 'Setting docker image for latest push')
