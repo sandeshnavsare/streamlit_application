@@ -215,6 +215,10 @@ sudo apt-get update -y
 sudo apt-get install trivy -y
 ```
 #
+- <b id="Argo"> 🔷 What is Argo CD? </b>
+  - <b> Argo CD (Argo Continuous Delivery) is a GitOps-based continuous delivery tool for Kubernetes.
+It allows you to automatically deploy your Kubernetes manifests from a Git repository into your cluster, keeping everything in sync. </b>
+ 
 - <b id="Argo">Install and Configure ArgoCD (Master Machine)</b>
   - <b>Create argocd namespace</b>
   ```bash
